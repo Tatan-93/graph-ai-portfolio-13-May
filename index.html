@@ -94,13 +94,45 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 120px 0 60px;
             background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
                         radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent);
+        }
+
+        /* Profile Image Styling */
+        .profile-img-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-card);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img-container::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: var(--gradient);
+            z-index: 1;
         }
 
         .hero h1 {
@@ -343,6 +375,9 @@
             .section-title h2 {
                 font-size: 2.5rem;
             }
+            .hero {
+                min-height: auto;
+            }
         }
     </style>
 </head>
@@ -361,6 +396,9 @@
 
     <section class="hero">
         <div class="container">
+            <div class="profile-img-container">
+                <img src="https://github.com/Tatan-93/graph-ai-portfolio-13-May/blob/main/IMG_8935.JPG?raw=true" alt="Tania Spedaliero" class="profile-img">
+            </div>
             <span class="badge">Graph Courses • 2026 Cohort</span>
             <h1>Bridging Biology &<br>Artificial Intelligence</h1>
             <p>Portfolio for the <strong>Generative AI for Work & Research</strong> program. Exploring the frontier of no-code AI tools to automate complex scientific workflows.</p>
