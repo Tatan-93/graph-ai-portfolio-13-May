@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/05/31/17/20260531174021-UG8H576X.js" defer></script>
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/05/31/17/20260531174021-UG8H576X.js" defer></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #6366f1;
@@ -367,6 +368,57 @@
             color: var(--secondary);
         }
 
+        /* Consultation Form Styles */
+        .consultation-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            max-width: 720px;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .consultation-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.1);
+        }
+
+        .consultation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .iframe-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #ffffff; /* Clean canvas backing for Google Form loader */
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            max-width: 640px;
+            min-height: 777px;
+            border: none;
+            display: block;
+        }
+
         /* Footer */
         footer {
             padding: 5rem 0;
@@ -413,6 +465,12 @@
             .hero {
                 min-height: auto;
             }
+            .consultation-card {
+                padding: 1rem;
+            }
+            .iframe-container iframe {
+                min-height: 600px;
+            }
         }
     </style>
 </head>
@@ -425,6 +483,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#course">Course</a></li>
                 <li><a href="#submissions">Submissions</a></li>
+                <li><a href="#consultation">Consultation</a></li>
             </ul>
         </div>
     </nav>
@@ -589,6 +648,26 @@
         </div>
     </section>
 
+    <!-- Contact for Consultation Section -->
+    <section id="consultation" style="background: rgba(255, 255, 255, 0.01);">
+        <div class="container">
+            <div class="section-title">
+                <span>Let's Collaborate</span>
+                <h2>Contact for Consultation</h2>
+            </div>
+            
+            <div class="consultation-card">
+                <p style="color: var(--text-muted); margin-bottom: 2rem; text-align: center; font-size: 1.05rem; max-width: 600px;">
+                    Have questions about automating your biological workflows, setting up data pipelines, or incorporating AI into your scientific research? Fill out the brief form below to book a specialized consultation session.
+                </p>
+                
+                <div class="iframe-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbANMftojjqHIDIaIVKLjx1g2f9F5bfVijzFbY3dVbi9a5Kw/viewform?embedded=true" width="640" height="777" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-logo">Tania Spedaliero</div>
@@ -620,4 +699,4 @@
         });
     </script>
 </body>
-</html>        
+</html>
